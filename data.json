@@ -1,0 +1,86 @@
+{
+  "subjects": [
+    {
+      "id": "mat1002",
+      "name": "MAT1002",
+      "subject": "MAT1002 Calculus II",
+      "color": "#2563eb"
+    },
+    {
+      "id": "mat2041",
+      "name": "MAT2041",
+      "subject": "MAT2041 Linear Algebra and Applications",
+      "color": "#059669"
+    },
+    {
+      "id": "eng1002",
+      "name": "ENG1002",
+      "subject": "ENG1002 EAP 1",
+      "color": "#ea580c"
+    },
+    {
+      "id": "aie1902",
+      "name": "AIE1902",
+      "subject": "AIE1902 AI Exploration II",
+      "color": "#7c3aed"
+    }
+  ],
+  "plans": [
+    {
+      "id": "4",
+      "date": "2026-04-22",
+      "subjectId": "mat1002",
+      "title": "Quiz 4",
+      "type": "quiz",
+      "notes": "Quiz window: Apr 20 to Apr 24, 2026. Duration: 30 min. Exact date inside this window is not stated. Worst quiz is dropped."
+    },
+    {
+      "id": "5",
+      "date": "2026-04-21",
+      "subjectId": "mat2041",
+      "title": "Quiz 4",
+      "type": "quiz",
+      "notes": "Сover lecture 1 to lecture 23 with more questions concerning lecture 19-23."
+    },
+    {
+      "id": "6",
+      "date": "2026-05-11",
+      "subjectId": "mat1002",
+      "title": "Final exam",
+      "type": "final",
+      "notes": "Centralized final exam. Time: 08:30-11:30. Weight: 40%."
+    },
+    {
+      "id": "7",
+      "date": "2026-05-14",
+      "subjectId": "mat2041",
+      "title": "Final exam",
+      "type": "final",
+      "notes": "Centralized final exam. Time: 13:30-16:00. Weight: 35%. Final covers all material of the semester."
+    },
+    {
+      "id": "13",
+      "date": "2026-04-25",
+      "subjectId": "eng1002",
+      "title": "Writing Test II",
+      "type": "exam",
+      "notes": "In-class writing test. Time: 09:00-12:00. Weight: 30%."
+    },
+    {
+      "id": "14",
+      "date": "2026-04-27",
+      "subjectId": "eng1002",
+      "title": "Group Discussion Assessment",
+      "type": "exam",
+      "notes": "Assessment window: Apr 27 to Apr 30, 2026. In regular class time. Weight: 15%. I used the start date of the window because the planner requires one date."
+    },
+    {
+      "id": "17",
+      "date": "2026-04-27",
+      "subjectId": "aie1902",
+      "title": "Final presentation session",
+      "type": "presentation",
+      "notes": "Announcement gives only 'Monday the 27th'. In the spreadsheet this was marked as inferred date. I used Apr 27, 2026 because it is the Monday the 27th that fits the Spring 2026 term. Likely regular Monday class slot."
+    }
+  ]
+}
