@@ -1,0 +1,133 @@
+{
+  "type": "schedule",
+  "term": "Spring 2026",
+  "weeklySchedule": {
+    "Monday": [
+      {
+        "courseCode": "AIE1902",
+        "section": "S05",
+        "title": "Supervision",
+        "startTime": "08:30",
+        "endTime": "10:20",
+        "location": [
+          "Teaching B Building 307",
+          "Teaching A Building 314"
+        ]
+      },
+      {
+        "courseCode": "MAT1002",
+        "section": "L07",
+        "title": "Lecture",
+        "startTime": "10:30",
+        "endTime": "12:20",
+        "location": "Teaching B Building 201"
+      },
+      {
+        "courseCode": "MAT2041",
+        "section": "L03",
+        "title": "Lecture",
+        "startTime": "13:30",
+        "endTime": "14:50",
+        "location": "Teaching Complex C203"
+      }
+    ],
+    "Tuesday": [
+      {
+        "courseCode": "ENG1002",
+        "section": "L42",
+        "title": "Lecture",
+        "startTime": "08:30",
+        "endTime": "09:50",
+        "location": "Teaching D Building 203"
+      },
+      {
+        "courseCode": "DAI1000",
+        "section": "L09",
+        "title": "Lecture",
+        "startTime": "11:30",
+        "endTime": "12:20",
+        "location": "Teaching A Building 207"
+      },
+      {
+        "courseCode": "GFH1000",
+        "section": "T15",
+        "title": "Tutorial",
+        "startTime": "13:30",
+        "endTime": "15:20",
+        "location": "Teaching A Building 317"
+      },
+      {
+        "courseCode": "MAT2041",
+        "section": "T03",
+        "title": "Tutorial",
+        "startTime": "19:00",
+        "endTime": "19:50",
+        "location": "Teaching C Building 206"
+      }
+    ],
+    "Wednesday": [
+      {
+        "courseCode": "MAT1002",
+        "section": "L07",
+        "title": "Lecture",
+        "startTime": "10:30",
+        "endTime": "12:20",
+        "location": "Teaching B Building 201"
+      },
+      {
+        "courseCode": "MAT2041",
+        "section": "L03",
+        "title": "Lecture",
+        "startTime": "13:30",
+        "endTime": "14:50",
+        "location": "Teaching Complex C203"
+      },
+      {
+        "courseCode": "MAT1002",
+        "section": "T33",
+        "title": "Tutorial",
+        "startTime": "18:00",
+        "endTime": "19:20",
+        "location": "Teaching D Building 113"
+      }
+    ],
+    "Thursday": [
+      {
+        "courseCode": "ENG1002",
+        "section": "L42",
+        "title": "Lecture",
+        "startTime": "08:30",
+        "endTime": "09:50",
+        "location": "Teaching D Building 203"
+      },
+      {
+        "courseCode": "PED1221",
+        "section": "L04",
+        "title": "Lecture",
+        "startTime": "15:30",
+        "endTime": "17:20",
+        "location": "SPORT HALL MF"
+      }
+    ],
+    "Friday": [
+      {
+        "courseCode": "GFH1000",
+        "section": "L06",
+        "title": "Lecture",
+        "startTime": "13:30",
+        "endTime": "14:20",
+        "location": "Teaching A Building 202"
+      },
+      {
+        "courseCode": "AIE1902",
+        "section": "S05",
+        "title": "Supervision",
+        "startTime": "14:30",
+        "endTime": "16:20",
+        "location": "TBA"
+      }
+    ],
+    "Saturday": [],
+    "Sunday": []
+  }
+}

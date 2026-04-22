@@ -19,6 +19,9 @@ export default function Sidebar({ subjects }) {
         <NavLink to="/" className={getLinkClass} end>
           Главная
         </NavLink>
+        <NavLink to="/ai-planner" className={getLinkClass} end>
+          AI Planner
+        </NavLink>
         <NavLink to="/subjects" className={getLinkClass} end>
           Все предметы
         </NavLink>

@@ -4,6 +4,7 @@ import PlanEditModal from "./components/PlanEditModal";
 import Sidebar from "./components/Sidebar";
 import { parseISODate } from "./lib/date";
 import { getPlans, getSubjectById, getSubjects } from "./lib/data";
+import AIPlannerPage from "./pages/AIPlannerPage";
 import AllSubjectsPage from "./pages/AllSubjectsPage";
 import HomePage from "./pages/HomePage";
 import SubjectPage from "./pages/SubjectPage";
@@ -58,6 +59,7 @@ export default function App() {
             path="/"
             element={<HomePage plans={plans} onPlanCtrlClick={handleOpenPlanEditor} />}
           />
+          <Route path="/ai-planner" element={<AIPlannerPage plans={plans} />} />
           <Route path="/subjects" element={<AllSubjectsPage plans={plans} />} />
           <Route path="/subjects/:subjectId" element={<SubjectRoute plans={plans} />} />
           <Route path="*" element={<Navigate to="/" replace />} />

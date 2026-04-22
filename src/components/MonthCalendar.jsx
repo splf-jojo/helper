@@ -7,12 +7,35 @@ import {
   toISODate
 } from "../lib/date";
 
+const WEEKDAY_NAMES_EN = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday"
+];
+
 function planRowText(plan) {
   return `${plan.subject}: ${plan.title}`;
 }
 
 function getCellTitle(dateKey) {
   return `${dateKey} • ${getDaysLeftTooltip(dateKey)} (по Пекину)`;
+}
+
+function getWeeklyCellTitle(dateKey, weekdayName, classesCount) {
+  const lessonLabel = classesCount === 1 ? "class" : "classes";
+  return `${dateKey} • ${weekdayName} • ${classesCount} ${lessonLabel}`;
+}
+
+function getWeekdayNameEn(dateObj) {
+  return WEEKDAY_NAMES_EN[dateObj.getDay()];
+}
+
+function weeklyClassRowText(weeklyClass) {
+  return `${weeklyClass.subjectShort} ${weeklyClass.title} ${weeklyClass.startTime}-${weeklyClass.endTime}`;
 }
 
 function handlePlanClick(event, plan, onPlanCtrlClick) {
@@ -40,7 +63,14 @@ function hexToRgba(hexColor, alpha) {
   return `rgba(${red}, ${green}, ${blue}, ${alpha})`;
 }
 
-export default function MonthCalendar({ year, monthIndex, plans, onPlanCtrlClick }) {
+export default function MonthCalendar({
+  year,
+  monthIndex,
+  plans,
+  mode = "final",
+  weeklyScheduleByWeekday = {},
+  onPlanCtrlClick
+}) {
   const days = getCalendarGrid(year, monthIndex);
   const weekDays = getWeekDaysRu();
   const todayIso = getTodayISOInBeijing();
@@ -82,12 +112,18 @@ export default function MonthCalendar({ year, monthIndex, plans, onPlanCtrlClick
           const dateKey = toISODate(day);
           const isToday = dateKey === todayIso;
           const dayPlans = plansByDate[dateKey] ?? [];
+          const weekdayName = getWeekdayNameEn(day);
+          const dayWeeklyClasses = weeklyScheduleByWeekday?.[weekdayName] ?? [];
+          const isWeeklyMode = mode === "weekly";
+          const cellTitle = isWeeklyMode
+            ? getWeeklyCellTitle(dateKey, weekdayName, dayWeeklyClasses.length)
+            : getCellTitle(dateKey);
 
           return (
             <div
               key={dateKey}
               className="min-h-28 border-b border-r border-border bg-white p-2 hover:bg-slate-50/70 last:border-r-0"
-              title={getCellTitle(dateKey)}
+              title={cellTitle}
             >
               <p className="mb-2">
                 <span
@@ -101,23 +137,43 @@ export default function MonthCalendar({ year, monthIndex, plans, onPlanCtrlClick
                 </span>
               </p>
               <ul className="space-y-1">
-                {dayPlans.map((plan) => (
-                  <li
-                    key={plan.id}
-                    className="rounded border px-1.5 py-1 text-xs leading-4 text-slate-800 whitespace-normal break-words"
-                    style={{
-                      borderColor: plan.subjectColor,
-                      backgroundColor: hexToRgba(plan.subjectColor, 0.16)
-                    }}
-                    title={`${planRowText(plan)} • ${getDaysLeftTooltip(
-                      plan.date
-                    )} Ctrl + ЛКМ`}
-                    onClick={(event) => handlePlanClick(event, plan, onPlanCtrlClick)}
-                  >
-                    <span className="text-slate-700">{plan.subject}: </span>
-                    <span className="font-semibold text-slate-900">{plan.title}</span>
-                  </li>
-                ))}
+                {isWeeklyMode
+                  ? dayWeeklyClasses.map((weeklyClass) => (
+                      <li
+                        key={weeklyClass.id}
+                        className="rounded border px-1.5 py-1 text-xs leading-4 text-slate-800 whitespace-normal break-words"
+                        style={{
+                          borderColor: weeklyClass.subjectColor,
+                          backgroundColor: hexToRgba(weeklyClass.subjectColor, 0.16)
+                        }}
+                        title={`${weeklyClassRowText(weeklyClass)} • ${
+                          weeklyClass.locationText
+                        }`}
+                      >
+                        <span className="font-semibold text-slate-900">
+                          {weeklyClass.startTime}-{weeklyClass.endTime}
+                        </span>
+                        <span className="text-slate-700"> {weeklyClass.subjectShort}: </span>
+                        <span className="text-slate-900">{weeklyClass.title}</span>
+                      </li>
+                    ))
+                  : dayPlans.map((plan) => (
+                      <li
+                        key={plan.id}
+                        className="rounded border px-1.5 py-1 text-xs leading-4 text-slate-800 whitespace-normal break-words"
+                        style={{
+                          borderColor: plan.subjectColor,
+                          backgroundColor: hexToRgba(plan.subjectColor, 0.16)
+                        }}
+                        title={`${planRowText(plan)} • ${getDaysLeftTooltip(
+                          plan.date
+                        )} (по Пекину) • Ctrl + ЛКМ: изменить план`}
+                        onClick={(event) => handlePlanClick(event, plan, onPlanCtrlClick)}
+                      >
+                        <span className="text-slate-700">{plan.subject}: </span>
+                        <span className="font-semibold text-slate-900">{plan.title}</span>
+                      </li>
+                    ))}
               </ul>
             </div>
           );

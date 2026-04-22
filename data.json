@@ -15,7 +15,7 @@
     {
       "id": "eng1002",
       "name": "ENG1002",
-      "subject": "ENG1002 EAP 1",
+      "subject": "ENG1002 English for Academic Purposes",
       "color": "#ea580c"
     },
     {
@@ -23,6 +23,18 @@
       "name": "AIE1902",
       "subject": "AIE1902 AI Exploration II",
       "color": "#7c3aed"
+    },
+    {
+      "id": "dai1000",
+      "name": "DAI1000",
+      "subject": "DAI1000 Digital and AI Literacy",
+      "color": "#dc2626"
+    },
+    {
+      "id": "gfh1000",
+      "name": "GFH1000",
+      "subject": "GFH1000 In Dialogue with Humanity",
+      "color": "#0891b2"
     }
   ],
   "plans": [
@@ -40,7 +52,7 @@
       "subjectId": "mat2041",
       "title": "Quiz 4",
       "type": "quiz",
-      "notes": "Сover lecture 1 to lecture 23 with more questions concerning lecture 19-23."
+      "notes": "Cover lecture 1 to lecture 23 with more questions concerning lecture 19-23."
     },
     {
       "id": "6",
@@ -80,7 +92,39 @@
       "subjectId": "aie1902",
       "title": "Final presentation session",
       "type": "presentation",
-      "notes": "Announcement gives only 'Monday the 27th'. In the spreadsheet this was marked as inferred date. I used Apr 27, 2026 because it is the Monday the 27th that fits the Spring 2026 term. Likely regular Monday class slot."
+      "notes": "Announcement gives only Monday the 27th. I used Apr 27, 2026 because it is the Monday the 27th that fits the Spring 2026 term."
+    },
+    {
+      "id": "18",
+      "date": "2026-04-30",
+      "subjectId": "mat2041",
+      "title": "Assignment 6 due",
+      "type": "assignment",
+      "notes": "Due Apr 30, 2026 at 22:00 on Blackboard. Late policy: within 24 hours, 20% penalty. More than 24 hours late, grade 0."
+    },
+    {
+      "id": "19",
+      "date": "2026-04-28",
+      "subjectId": "dai1000",
+      "title": "Final exam",
+      "type": "final",
+      "notes": "DAI final on Tuesday."
+    },
+    {
+      "id": "20",
+      "date": "2026-04-28",
+      "subjectId": "gfh1000",
+      "title": "GFN presentation",
+      "type": "presentation",
+      "notes": "Presentation in tutorial on Tuesday."
+    },
+    {
+      "id": "21",
+      "date": "2026-05-10",
+      "subjectId": "gfh1000",
+      "title": "Term paper due",
+      "type": "essay",
+      "notes": "Answer one of the provided questions. Aim for 1,000 words. Submit via Veriguide link on Blackboard by May 10, 2026."
     }
   ]
 }
